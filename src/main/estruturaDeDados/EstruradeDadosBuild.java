@@ -5,3 +5,4 @@ public class EstruradeDadosBuild {
         // TODO aqui você deve instanciar a classe Lista e retorná-la
         throw new UnsupportedOperationException("Not supported yet.");
 }
+}

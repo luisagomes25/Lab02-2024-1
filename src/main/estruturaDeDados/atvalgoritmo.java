@@ -11,55 +11,103 @@ private int tamanho = 0;
 
     @Override
     public boolean buscaElemento(int valor) {
-        for(i=0; i > array.leght; i++);
-            return = true;
+        for(int i=0; i > a.length; i++){
+            if(a[i] == valor){
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
     public int minimo() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'minimo'");
+       int minimo = a[0];
+       for(int i = 1; i< a.length; i++){
+            if(a[i]<minimo){
+                minimo = a [i];
+            }
+
+       }
+       return minimo;
     }
 
     @Override
     public int maximo() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'maximo'");
+        int maximo = a[0];
+        for(int i = 1; i < a.length; i++){
+            if(a[i]>maximo){
+                maximo=a[i];
+            }
+
+        }
+        return maximo;
+        
     }
 
     @Override
     public int predecessor(int valor) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'predecessor'");
+        int result = -1;
+        for(int i = 0; i < a.length; i++){
+            if( a[i] == valor ){
+                if(i++<a.length){
+                    result = a[i - 1];
+                }
+                break;
+            }
+        }
+        return result;
     }
+          
 
     @Override
     public int sucessor(int valor) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'sucessor'");
-    }
+        int result = -1;
+        for(int i = 0; i < a.length; i++){
+            if( a[i] == valor ){
+                if(i++<a.length){
+                    result = a[i + 1];
+                }
+                break;
+            }
+        }
+        return result;
+    } 
 
     @Override
     public void insereElemento(int valor) {
-        for(int i=0; i < 20 ; i ++);     
+        for(int i=0; i < a.length ; i ++){
+            if(a[i]== valor){
+                a[i]=0;
+                return;
+            }
+        }     
             
     }
 
     @Override
     public void remove(int valor) {
+        for(int i = 0; i < a.length; i++){
+            if(a[i]== valor){
+                a[i]=0;
+                return;
+            }
+        }
         
     }
 
     @Override
     public int buscaIndice(int valor) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'buscaIndice'");
+        for(int i = 0; i < a.length; i++){
+            if(a[i]== valor){
+                return i;
+            }
+        }
+        return 0;
     }
 
     @Override
     public void insereElementoPosicao(int valor, int buscaIndice) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'insereElementoPosicao'");
+        
     }
 
     @Override
