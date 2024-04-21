@@ -1,8 +1,8 @@
 package estruturaDeDados;
 
-public class EstruradeDadosBuild {
+public class EstruradeDadosBuild implements Lista{
     public static Lista buildLista() {
-        // TODO aqui você deve instanciar a classe Lista e retorná-la
-        throw new UnsupportedOperationException("Not supported yet.");
-}
+        return new atvalgoritmo();
+        
+    }
 }

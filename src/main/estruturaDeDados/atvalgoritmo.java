@@ -26,7 +26,6 @@ private int tamanho = 0;
             if(a[i]<minimo){
                 minimo = a [i];
             }
-
        }
        return minimo;
     }
@@ -38,10 +37,8 @@ private int tamanho = 0;
             if(a[i]>maximo){
                 maximo=a[i];
             }
-
         }
         return maximo;
-        
     }
 
     @Override
@@ -80,8 +77,7 @@ private int tamanho = 0;
                 a[i]=0;
                 return;
             }
-        }     
-            
+        }         
     }
 
     @Override
@@ -98,46 +94,76 @@ private int tamanho = 0;
     @Override
     public int buscaIndice(int valor) {
         for(int i = 0; i < a.length; i++){
-            if(a[i]== valor){
+            if (a[i] == valor){
                 return i;
             }
         }
-        return 0;
+        return -1 ;
     }
 
     @Override
     public void insereElementoPosicao(int valor, int buscaIndice) {
+        if (tamanho == a.length || buscaIndice < 0 || buscaIndice > tamanho) {
+            return;
+        }
+    for (int i = tamanho; i > buscaIndice; i--) {
+            a[i] = [i - 1];
+        } 
+    
+        a[buscaIndice] = valor;
+        tamanho++;
         
     }
 
     @Override
     public void insereInicio(int valor) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'insereInicio'");
+        for (int i = tamanho; i > 0; i--) {
+            a[i] = a[i - 1];
+           }
+           a[0] = valor;
+           tamanho++;
+    
     }
 
     @Override
     public void insereFim(int valor) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'insereFim'");
+        a[tamanho] = valor;
+        tamanho++;
+
     }
 
     @Override
     public void removeIndice(int indice) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'removeIndice'");
+        if (indice < 0 || indice >= tamanho) {
+            return;
+        }
+        for (int i = indice; i < tamanho - 1; i++) {
+            a[i] = a[i + 1];
+        }
+        tamanho--;
+
     }
 
     @Override
     public void removeInicio() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'removeInicio'");
+        if (tamanho == 0) {
+            return;
+        }
+        for (int i = 0; i < tamanho - 1; i++) {
+            a[i] = a[i + 1];
+        }
+        a[tamanho - 1] = 0;
+        tamanho--; 
     }
 
     @Override
     public void removeFim() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'removeFim'");
+        if (tamanho == 0) {
+            return;
+        }
+        a[tamanho - 1] = 0;
+        tamanho--;
+       
     }
     
 }
